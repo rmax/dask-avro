@@ -1,4 +1,5 @@
 graft docs
+graft examples
 graft requirements
 graft src
 graft tests
