@@ -1,0 +1,33 @@
+# This file exists so you can easily regenerate your project.
+#
+# `cookiepatcher` is a convenient shim around `cookiecutter`
+# for regenerating projects (it will generate a .cookiecutterrc 
+# automatically for any template). To use it:
+#
+#    pip install cookiepatcher
+#    cookiepatcher gh:ionelmc/cookiecutter-pylibrary project-path
+#
+# See:
+#    https://pypi.python.org/pypi/cookiecutter
+#
+# Alternatively, you can run:
+#
+#    cookiecutter --overwrite-if-exists --config-file=project-path/.cookiecutterrc gh:ionelmc/cookiecutter-pylibrary
+
+default_context:
+    email: rolando at rmax.io
+    full_name: Rolando (Max) Espinoza
+    github_username: rolando
+    project_name: Dask-Avro
+    project_package: dask_avro
+    project_short_description: Avro reader for Dask.
+    project_slug: dask-avro
+    pypi_username: rolando
+    use_codecov: y
+    use_cython: n
+    use_landscape: y
+    use_pypi_deployment_with_travis: y
+    use_pytest: y
+    use_requiresio: y
+    version: 0.1.0-dev
+    year: 2017
