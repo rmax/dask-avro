@@ -9,7 +9,6 @@ env:
   - TOXENV=py35
   - TOXENV=py34
   - TOXENV=py27
-  - TOXENV=pypy
 
 matrix:
   fast_finish: true
