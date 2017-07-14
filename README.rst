@@ -12,20 +12,20 @@ Dask-Avro
         :target: https://readthedocs.org/projects/dask-avro/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://img.shields.io/travis/rolando/dask-avro.svg
-        :target: https://travis-ci.org/rolando/dask-avro
+.. image:: https://img.shields.io/travis/rmax/dask-avro.svg
+        :target: https://travis-ci.org/rmax/dask-avro
 
-.. image:: https://codecov.io/github/rolando/dask-avro/coverage.svg?branch=master
+.. image:: https://codecov.io/github/rmax/dask-avro/coverage.svg?branch=master
     :alt: Coverage Status
-    :target: https://codecov.io/github/rolando/dask-avro
+    :target: https://codecov.io/github/rmax/dask-avro
 
-.. image:: https://landscape.io/github/rolando/dask-avro/master/landscape.svg?style=flat
-    :target: https://landscape.io/github/rolando/dask-avro/master
+.. image:: https://landscape.io/github/rmax/dask-avro/master/landscape.svg?style=flat
+    :target: https://landscape.io/github/rmax/dask-avro/master
     :alt: Code Quality Status
 
-.. image:: https://requires.io/github/rolando/dask-avro/requirements.svg?branch=master
+.. image:: https://requires.io/github/rmax/dask-avro/requirements.svg?branch=master
     :alt: Requirements Status
-    :target: https://requires.io/github/rolando/dask-avro/requirements/?branch=master
+    :target: https://requires.io/github/rmax/dask-avro/requirements/?branch=master
 
 Avro reader for Dask.
 
@@ -46,7 +46,7 @@ FIXME
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `rolando/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `rmax/cookiecutter-pypackage`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`rolando/cookiecutter-pypackage`: https://github.com/rolando/cookiecutter-pypackage
+.. _`rmax/cookiecutter-pypackage`: https://github.com/rmax/cookiecutter-pypackage

@@ -14,7 +14,7 @@ from dask.bytes.core import OpenFileCreator
 
 
 __author__ = 'Rolando (Max) Espinoza'
-__email__ = 'rolando at rmax.io'
+__email__ = 'me at rmax.io'
 __version__ = '0.1.0'
 
 
