@@ -36,17 +36,27 @@ Avro reader for Dask.
 Features
 --------
 
-FIXME
+This projects provides an Avro_ format reader for Dask_. Provides a convenient
+function to read one or more Avro files and partition them arbitrarily.
 
 Quickstart
 ----------
 
-FIXME
+Usage::
+
+  import dask.bag
+  import dask_avro
+
+  delayeds = dask_avro.read_avro("data-*.avro", blocksize=2**26)
+  data = dask.bag.from_delayed(delayeds)
+
 
 Credits
 -------
 
 This package was created with Cookiecutter_ and the `rmax/cookiecutter-pypackage`_ project template.
 
+.. _Avro: https://avro.apache.org/docs/1.2.0/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Dask: http://dask.pydata.org/en/latest/
 .. _`rmax/cookiecutter-pypackage`: https://github.com/rmax/cookiecutter-pypackage
