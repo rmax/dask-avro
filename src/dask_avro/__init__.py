@@ -17,7 +17,7 @@ from dask.bytes.core import OpenFileCreator
 
 __author__ = 'Rolando (Max) Espinoza'
 __email__ = 'me at rmax.io'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 def read_avro(urlpath, blocksize=2**27, **kwargs):
