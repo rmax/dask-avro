@@ -2,12 +2,12 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-python: 3.5
+python: 3.6
 sudo: false
 
 env:
+  - TOXENV=py36
   - TOXENV=py35
-  - TOXENV=py34
   - TOXENV=py27
 
 matrix:
@@ -88,5 +88,5 @@ deploy:
   on:
     tags: true
     all_branches: true
-    repo: rolando/dask-avro
-    condition: "$TOXENV == py35"
+    repo: rmax/dask-avro
+    condition: "$TOXENV == py36"
