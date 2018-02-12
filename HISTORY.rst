@@ -4,6 +4,11 @@ History
 
 .. comment:: bumpversion marker
 
+0.1.2 (2018-02-12)
+------------------
+
+* Fix compatibility with ``dask`` 0.17.0.
+
 0.1.1 (2018-01-18)
 ------------------
 

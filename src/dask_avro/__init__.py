@@ -16,7 +16,7 @@ from dask.bytes.core import open_files, read_bytes
 
 __author__ = 'Rolando (Max) Espinoza'
 __email__ = 'me at rmax.io'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 
 def read_avro(urlpath, blocksize=2**27, **kwargs):
