@@ -13,6 +13,8 @@ import fastavro
 from dask import delayed
 from dask.bytes.core import open_files, read_bytes
 
+from .compat import iter_avro
+
 
 __author__ = 'Rolando (Max) Espinoza'
 __email__ = 'me at rmax.io'
@@ -77,4 +79,4 @@ def _avro_body(data, header):
     stream = io.BytesIO(data)
     schema = json.loads(header['meta']['avro.schema'].decode())
     codec = header['meta']['avro.codec'].decode()
-    return iter(fastavro._reader._iter_avro(stream, header, codec, schema, schema))
+    return iter(iter_avro(stream, header, codec, schema, schema))
