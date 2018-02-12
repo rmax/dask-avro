@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import io
+
 from pkgutil import walk_packages
 from setuptools import setup
 
@@ -10,13 +12,14 @@ def find_packages(path):
 
 
 def read_file(filename):
-    with open(filename) as fp:
+    with io.open(filename) as fp:
         return fp.read().strip()
 
 
 def read_rst(filename):
+    content = read_file(filename)
     # Ignore unsupported directives by pypi.
-    return ''.join(line for line in read_file(filename).splitlines()
+    return ''.join(line for line in io.StringIO(content)
                    if not line.startswith('.. comment::'))
 
 
