@@ -11,8 +11,7 @@ import json
 import fastavro
 
 from dask import delayed
-from dask.bytes import read_bytes
-from dask.bytes.core import OpenFileCreator
+from dask.bytes.core import open_files, read_bytes
 
 
 __author__ = 'Rolando (Max) Espinoza'
@@ -52,19 +51,16 @@ def read_avro(urlpath, blocksize=2**27, **kwargs):
 
 def _read_avro(urlpath, **kwargs):
     """Read avro file in given path and returns a list of delayed objects."""
-    myopen = OpenFileCreator(urlpath)
-
     values = []
-    for fn in myopen.fs.glob(urlpath):
-
-        with myopen(fn) as fp:
+    for fn in open_files(urlpath):
+        with fn as fp:
             av = fastavro.reader(fp)
             header = av._header
 
         # TODO: If the avro block size in the file is larger than the blocksize
         # passed here then some returned blocks may be empty because they don't
         # contain the delimiter.
-        _, blockss = read_bytes(fn, delimiter=header['sync'], not_zero=True,
+        _, blockss = read_bytes(fn.path, delimiter=header['sync'], not_zero=True,
                                 sample=False, **kwargs)
         values.extend(
             delayed(_avro_body)(block, header) for blocks in blockss for block in blocks
