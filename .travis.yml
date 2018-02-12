@@ -2,18 +2,18 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-python: 3.6
+python:
+  - 2.7
+  - 3.5
+  - 3.6
 sudo: false
 
 env:
-  - TOXENV=py36
-  - TOXENV=py35
-  - TOXENV=py27
+  - FASTAVRO=0.14
+  - FASTAVRO=latest
 
 matrix:
   fast_finish: true
-allow_failures:
-    - env: TOXENV=pypy
 
 before_install:
   - python --version
@@ -23,7 +23,7 @@ before_install:
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: 
   - pip install -U pip wheel
-  - pip install -U tox
+  - pip install -U tox-travis
   - pip install -U coverage
   - pip install -U requires.io
   - pip install -U twine
