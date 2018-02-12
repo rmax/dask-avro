@@ -31,7 +31,7 @@ Avro reader for Dask.
 
 * Free software: MIT license
 * Documentation: https://dask-avro.readthedocs.org.
-* Python versions: 2.7, 3.4+
+* Python versions: 2.7, 3.5+
 
 Features
 --------
