@@ -15,4 +15,3 @@ def iter_avro(stream, header, codec, writer_schema, reader_schema):
         stream = _stream_wrapper(stream)
 
     return iter(_iter_avro(stream, header, codec, writer_schema, reader_schema))
-
