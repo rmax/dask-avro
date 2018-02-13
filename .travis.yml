@@ -89,4 +89,4 @@ deploy:
     tags: true
     all_branches: true
     repo: rmax/dask-avro
-    condition: "$TOXENV == py36"
+    condition: $TRAVIS_PYTHON_VERSION == "3.6" && $FASTAVRO = "latest"
