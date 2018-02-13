@@ -4,6 +4,12 @@ History
 
 .. comment:: bumpversion marker
 
+0.2.0 (2018-02-12)
+------------------
+
+* Added support for ``fastavro`` 0.16+.
+
+
 0.1.2 (2018-02-12)
 ------------------
 
