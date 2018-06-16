@@ -4,6 +4,12 @@ History
 
 .. comment:: bumpversion marker
 
+0.3.0 (2018-06-16)
+------------------
+
+* Fixed support for latest ``fastavro`` release.
+* Require ``fastavro>=0.17``.
+
 0.2.1 (2018-06-15)
 ------------------
 
