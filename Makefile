@@ -32,13 +32,10 @@ help:
 	@echo "test - run tests quickly with the default Python"
 	@echo "test-all - run tests on every Python version with tox"
 	@echo "coverage - check code coverage quickly with the default Python"
-	@echo "compile-reqs - compile requirements"
-	@echo "install-reqs - install requirements"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
 	@echo "release - package and upload a release"
 	@echo "dist - package"
 	@echo "develop - install package in develop mode"
-	@echo "install - install the package to the active Python's site-packages"
 
 check: check-setup check-manifest check-history lint
 
@@ -118,34 +115,13 @@ docs: docs-build
 servedocs: docs
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
-tag-release: clean check dist
-	git branch | grep '* master'
-	# Tagging release.
-	VERSION=`cat VERSION`; git tag -a v$$VERSION
-	git push --follow-tags
-
 dist: clean
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist
 
-install: clean
-	pip install .
-
-REQUIREMENTS_IN := $(wildcard requirements*.in)
-.PHONY: $(REQUIREMENTS_IN)
-
-requirements%.txt: requirements%.in
-	pip-compile -v $< -o $@
-
-REQUIREMENTS_TXT := $(REQUIREMENTS_IN:.in=.txt)
-ifndef REQUIREMENTS_TXT
-REQUIREMENTS_TXT := $(wildcard requirements*.txt)
-endif
-
-compile-reqs: $(REQUIREMENTS_TXT)
-	@test -z "$$REQUIREMENTS_TXT" && echo "No 'requirements*.in' files. Nothing to do"
-
-install-reqs:
-	@test -z "$$REQUIREMENTS_TXT" && echo "No 'requirements*.txt' files. Nothing to do"
-	$(foreach req,$(REQUIREMENTS_TXT),pip install -r $(req);)
+tag-release: clean check dist
+	git branch | grep '* master'
+	# Tagging release.
+	VERSION=`cat VERSION`; git tag -a v$$VERSION
+	git push --follow-tags

@@ -2,6 +2,8 @@
 Sphinx
 bumpversion
 check-manifest
+coverage
+flake8
 pip-tools
 twine
 watchdog
