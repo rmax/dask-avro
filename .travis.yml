@@ -9,7 +9,7 @@ python:
 sudo: false
 
 env:
-  - FASTAVRO=0.14
+  - FASTAVRO=0.17
   - FASTAVRO=default
   - FASTAVRO=dev
 
