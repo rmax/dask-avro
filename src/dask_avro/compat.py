@@ -1,12 +1,19 @@
 import fastavro
 
 
-try:
+_stream_wrapper = None
+if fastavro.__version_info__ >= (0, 19, 7):
+    _iter_avro = fastavro._read._iter_avro_records
+elif fastavro.__version_info__ >= (0, 17, 0):
     _iter_avro = fastavro._read._iter_avro
     _stream_wrapper = fastavro._read.FileObjectReader
-except AttributeError:  # fastavro < 0.16
+elif fastavro.__version_info__ >= (0, 16, 0):
+    _iter_avro = fastavro._reader._reader._iter_avro
+    _stream_wrapper = fastavro._reader._reader.FileObjectReader
+elif fastavro.__version_info__ >= (0, 14, 0):
     _iter_avro = fastavro._reader._iter_avro
-    _stream_wrapper = None
+else:
+    raise ImportError("Unsupported fastavro version: %s" % fastavro.__version__)
 
 
 def iter_avro(stream, header, codec, writer_schema, reader_schema):
