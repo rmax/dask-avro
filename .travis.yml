@@ -10,9 +10,17 @@ sudo: false
 
 env:
   - FASTAVRO=0.14
-  - FASTAVRO=latest
+  - FASTAVRO=default
+  - FASTAVRO=dev
 
 matrix:
+  allow_failures:
+    - python: 2.7
+      env: FASTAVRO=dev
+    - python: 3.5
+      env: FASTAVRO=dev
+    - python: 3.6
+      env: FASTAVRO=dev
   fast_finish: true
 
 before_install:
@@ -89,4 +97,4 @@ deploy:
     tags: true
     all_branches: true
     repo: rmax/dask-avro
-    condition: $TRAVIS_PYTHON_VERSION == "3.6" && $FASTAVRO = "latest"
+    condition: $TRAVIS_PYTHON_VERSION == "3.6" && $FASTAVRO = "default"
