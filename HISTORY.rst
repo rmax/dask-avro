@@ -4,6 +4,11 @@ History
 
 .. comment:: bumpversion marker
 
+0.2.1 (2018-06-15)
+------------------
+
+* Pin fastavro version to <=0.19.6 due to breaking changes.
+
 0.2.0 (2018-02-12)
 ------------------
 

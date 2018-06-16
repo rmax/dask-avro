@@ -18,7 +18,7 @@ from .compat import iter_avro
 
 __author__ = 'Rolando (Max) Espinoza'
 __email__ = 'me at rmax.io'
-__version__ = '0.2.0'
+__version__ = '0.2.1'
 
 
 def read_avro(urlpath, blocksize=2**27, **kwargs):
